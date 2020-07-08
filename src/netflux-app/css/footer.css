@@ -1,0 +1,13 @@
+footer {
+    color: grey;
+    width: 100%;
+}
+
+footer div {
+    justify-content: space-between;
+}
+footer button {
+    color:white;
+    background-color: black;
+    border: none;
+}

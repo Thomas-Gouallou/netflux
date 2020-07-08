@@ -5,7 +5,7 @@ import { DataService } from './DataService';
 export class Acceuil extends Component {
     render() {
         return(
-
+<div></div>
         )
     }
 }
