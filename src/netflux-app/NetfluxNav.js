@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import {BrowserRouter, Switch, Route} from "react-router-dom"
-import Header from ""
+import Header from "./Header.js"
 
-export class Navigation extends Component {
+export class NetfluxNav extends Component {
 
     render() {
         return(
@@ -10,21 +10,21 @@ export class Navigation extends Component {
                 <Header></Header>
                 <Switch>
                     <Route path='/' exact>
-                        <Acceuil></Acceuil>
+                        <></>
                     </Route>
                     <Route  >
-                        <DetailProgramme></DetailProgramme>
+                        <></>
                     </Route>
                     <Route >
-                        <FormAjout ></FormAjout>
+                        < ></>
                     </Route>
                     <Route >
-                        <Search></Search>
+                        <></>
                     </Route><Route >
-                        <Favoris></Favoris>
+                        <></>
                     </Route>
                 </Switch>
-                <Footer></Footer>
+                <></>
             </BrowserRouter>
         )
     }
