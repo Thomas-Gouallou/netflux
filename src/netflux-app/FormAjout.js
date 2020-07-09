@@ -9,13 +9,14 @@ class FormAjout extends Component {
         this.state = {
             ligneSeries: [],
             castingImage: [],
-            castingName: []
+            castingName: [],
+            placeholderTitre: "Titre"
         }
     }
 
     setData = (e) => {
         DataService.programme[e.target.name] = e.target.value
-        // DataService.programme[id] = 
+        DataService.programme.id = DataService.programmes.length + 1
     }
 
     // setTypeFilm = (e) => {
@@ -25,10 +26,23 @@ class FormAjout extends Component {
     confirm = () => {
         DataService.programme.castingImage = this.state.castingImage
         DataService.programme.castingNom = this.state.castingName
-        console.log(this.state.castingImage)
-        console.log(this.state.castingName)
         DataService.programmes.push(DataService.programme)
-        DataService.programme = {}
+        DataService.programme = {
+            category: "",
+            id: 0,
+            imageBig: "",
+            imageSmall: "",
+            title: "",
+            rating: 0,
+            duration: 0,
+            release: "",
+            description: "",
+            typeFilm: [],
+            castingImage: [],
+            castingNom: [],
+            nbrSaisons: 0,
+            nbrEpisodes: 0
+        }
     }
 
     switchFilmSerie = (e) => {
@@ -45,29 +59,31 @@ class FormAjout extends Component {
                 </div>
             </div>)
             this.setState({
-                ligneSeries: ligneSerie
+                ligneSeries: ligneSerie,
+                placeholderTitre: "Titre de la série"
             })
         }
         else {
             this.setState({
-                ligneSeries: []
+                ligneSeries: [],
+                placeholderTitre: "Titre du film"
             })
+            if(e.target.value != "film" && e.target.value != "serie") {
+                this.setState({
+                    ligneSeries: [],
+                    placeholderTitre: "Titre"
+                })
+            }
         }
     }
-    // setCastingImage = (e) => {
-    //     DataService.programme.castingImage[e.target.name] = e.target.value
-    // }
+    setCastingImage = (e) => {
+        DataService.programme.castingImage[e.target.name] = e.target.value
+    }
 
-    // setCastingNom = (e) => {
-    //     DataService.programme.castingNom[e.target.name] = e.target.value
-    // }
+    setCastingNom = (e) => {
+        DataService.programme.castingNom[e.target.name] = e.target.value
+    }
 
-    // addTypeFilm = () => {
-    //     let ligneTypeFilm = []
-
-    //     ligneTypeFilm.push(<div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="" name="typeFilm" />...</label></div>
-    //     )
-    // }
 
     render() {
         return (
@@ -75,15 +91,17 @@ class FormAjout extends Component {
                 <nav className="row">
                     <article className="col-10">
                         <div className="row m-2 justify-content-center">
-                            <select class="form-control col-10" name="category" onChange={this.switchFilmSerie}>
-                                <option>--Categorie--</option>
-                                <option value="film">Film</option>
-                                <option value="serie">Série</option>
-                            </select>
-                        </div>
-                        <div className="row m-2 justify-content-center">
-                            <div className="col-10">Titre</div><br />
-                            <input type="text" onChange={this.setData} name="title" className="col-10 form-control form" placeholder="Titre du film" />
+                            <div className="col-7">
+                                <div>Titre</div>
+                                <input type="text" onChange={this.setData} name="title" className="col-10 form-control form" placeholder={this.state.placeholderTitre} />
+                            </div>
+                            <div className="col-3"><br/>
+                                <select class="form-control" name="category" onChange={this.switchFilmSerie}>
+                                    <option>--Categorie--</option>
+                                    <option value="film">Film</option>
+                                    <option value="serie">Série</option>
+                                </select>
+                            </div>
                         </div>
                         <div className="row m-2 justify-content-center">
                             <div className="col-3">
@@ -130,14 +148,17 @@ class FormAjout extends Component {
                     </article>
                     <aside className="col-2">
                         <div>Genre</div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="" name="typeFilm" />Horreur</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="" name="typeFilm" />Drame</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="" name="typeFilm" />Comedie</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="" name="typeFilm" />Aventure</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="" name="typeFilm" />Romance</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="" name="typeFilm" />...</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="" name="typeFilm" />...</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="" name="typeFilm" />...</label></div><br />
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="horreur" name="typeFilm" />Horreur</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="drame" name="typeFilm" />Drame</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="comedie" name="typeFilm" />Comédie</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="aventure" name="typeFilm" />Aventure</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="romance" name="typeFilm" />Romance</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="fantastique" name="typeFilm" />Fantastique</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="action" name="typeFilm" />Action</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="historique," name="typeFilm" />Historique,.</label></div><br />
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="historique," name="typeFilm" />Historique,.</label></div><br />
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="historique," name="typeFilm" />Historique,.</label></div><br />
+
                         <div>L'image d'affiche
                         <input type='text' onChange={this.setData} className="form-control form" name="imageBig" placeholder="URL de l'image" /></div><br />
                         <div>L'image d'acceuil
