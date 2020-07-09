@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { DataService } from './DataService';
-
 import Series from './Series'
 import Films from './Films'
 import Carousel from './carousel/Carousel'
-
 
 class Acceuil extends Component {
 
@@ -13,7 +11,6 @@ class Acceuil extends Component {
         super(props)
         this.state = {
             programmes: DataService.programmes
-
         }
     }
     

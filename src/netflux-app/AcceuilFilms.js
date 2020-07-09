@@ -1,16 +1,21 @@
 import React, { Component } from "react"
 import Programme from './Programme'
+import { DataService } from './DataService';
+import './css/acceuilFilmsSeries.css'
 
-
-class Series extends Component {
+class AcceuilFilms extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            programmes: DataService.programmes
+        }
     }
 
     render() {
         return (
             <div className="container">
-                {this.props.programmes.filter(a=> (a.category=="serie")).map((element) => {
+                <h2>Films</h2>
+                {this.state.programmes.filter(a => (a.category == "film")).map((element) => {
                     return (
                         <Programme programme={element}></Programme>
                     )
@@ -18,6 +23,7 @@ class Series extends Component {
             </div>
         )
     }
+
 }
 
-export default Series
+export default AcceuilFilms

@@ -5,16 +5,11 @@ import { DataService } from './DataService';
 class Films extends Component {
     constructor(props) {
         super(props)
-        console.log(this.props)
     }
 
     render() {
-        
-        
-        
         return (
             <div className="container">
-                
                 {this.props.programmes.filter(a=> (a.category=="film")).map((element) => {
                     return (
                         <Programme programme={element}></Programme>
