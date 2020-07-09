@@ -155,19 +155,19 @@ class FormAjout extends Component {
                     </article>
                     <aside className="col-2">
                         <div>Genre</div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="horreur" />Horreur</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="drame" />Drame</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="comedie" />Comédie</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="aventure" />Aventure</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="romance" />Romance</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="fantastique" />Fantastique</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="action" />Action</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="historique" />Historique</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="thriller" />Thriller</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="science-fiction" />Science-fiction</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="catastrophe" />Catastrophe</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="western" />Western</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="policier" />Policier</label></div><br/>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Horreur" />Horreur</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Drame" />Drame</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Comédie" />Comédie</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Aventure" />Aventure</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Fantastique" />Fantastique</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Action" />Action</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Historique" />Historique</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Thriller" />Thriller</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Science-fiction" />Science-fiction</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Catastrophe" />Catastrophe</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Western" />Western</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Policier" />Policier</label></div>
+                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Policier" />Romance</label></div><br/>
 
                         <div>L'image d'affiche
                         <input type='text' onChange={this.setData} className="form-control form" name="imageBig" placeholder="URL de l'image" /></div><br />

@@ -5,6 +5,9 @@ import Footer from "./Footer"
 import FormAjout from "./FormAjout"
 import Acceuil from "./Acceuil.js"
 import DetailProgramme from './DetailProgramme';
+import Series from "./Series.js"
+import AcceuilSeries from "./AcceuilSeries.js"
+import AcceuilFilms from "./AcceuilFilms.js"
 
 export class NetfluxNav extends Component {
 
@@ -21,7 +24,13 @@ export class NetfluxNav extends Component {
                     </Route>
                     <Route path='/DetailProgramme' exact>
                         <DetailProgramme></DetailProgramme>
-                    </Route>            
+                    </Route>   
+                    <Route path='/Series' exact>
+                        <AcceuilSeries></AcceuilSeries>
+                    </Route>   
+                    <Route path='/Films' exact>
+                        <AcceuilFilms></AcceuilFilms>
+                    </Route>   
                 </Switch>
                 <Footer></Footer>
             </BrowserRouter>
