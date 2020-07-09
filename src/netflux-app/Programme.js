@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import {DataService} from "./DataService"
 import {withRouter} from "react-router-dom"
-import './css./image.css'
+import './css/image.css'
 
 class Programme extends Component {
     constructor(props) {
@@ -34,7 +34,7 @@ class Programme extends Component {
         return(
             <div className="container">
                 <div className="row">
-                    <img className="col" onClick={this.redirectTo}  src={this.props.programme.imageSmall}/>
+                    <img id="i" className="col" onClick={this.redirectTo}  src={this.props.programme.imageSmall}/>
                 </div>
             </div>
         )

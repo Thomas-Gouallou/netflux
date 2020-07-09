@@ -2,6 +2,6 @@ img{
     transition: all 1s ease;
 }
 
-img:hover{
+#i:hover{
     transform: scale(1.25);
 }
