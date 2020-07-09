@@ -1,11 +1,28 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { DataService } from './DataService';
+import Programme from './Programme'
+import Series from './Series'
+import Films from './Films'
 
-export class Acceuil extends Component {
+
+class Acceuil extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            programmes: []
+        }
+    }
+
+    
     render() {
-        return(
-<div></div>
+        return (
+            <main>
+                <Programme></Programme>
+                <Series></Series>
+                <Films></Films>
+            </main>
         )
     }
 }
