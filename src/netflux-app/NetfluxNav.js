@@ -4,6 +4,7 @@ import Header from "./Header.js"
 import Footer from "./Footer"
 import FormAjout from "./FormAjout"
 import Acceuil from "./Acceuil.js"
+import DetailProgramme from './DetailProgramme';
 
 export class NetfluxNav extends Component {
 
@@ -18,7 +19,9 @@ export class NetfluxNav extends Component {
                     <Route path='/Form' exact>
                         <FormAjout></FormAjout>
                     </Route>
-                                       
+                    <Route path='/DetailProgramme' exact>
+                        <DetailProgramme></DetailProgramme>
+                    </Route>            
                 </Switch>
                 <Footer></Footer>
             </BrowserRouter>

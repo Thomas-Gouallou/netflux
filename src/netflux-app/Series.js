@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Programme from './Programme'
+import Programme from './DetailProgramme'
 
 class Series extends Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class Series extends Component {
     render() {
         return (
             <div className="container">
-                {this.props.programmes.filter(a=> (a.category.includes(serie))).map((element) => {
+                {this.props.programmes.filter(a=> (a.category=="serie")).map((element) => {
                     return (
                         <Programme programme={element}></Programme>
                     )
