@@ -11,40 +11,44 @@ class Programme extends Component{
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        image
+                        <img src={this.props.programmes.image}/>
                     </div>
                     <div className="col">
                         <div className="row">
-                            Titre :
+                            Titre : {this.props.programmes.title}
                         </div>
                         <div className="row">
-                            Ratings :
+                            Note : {this.props.programmes.rating}
                         </div>
                         <div className="row">
-                            Durée :
+                            Durée : {this.props.programmes.duration}
                         </div>
                         <div className="row">
-                            Date de sortie :
+                            Date de sortie : {this.props.programmes.release}
                         </div>
                         <div className="row">
-                            Description :
+                            Description : {this.props.programmes.description}
                         </div>
                         <div className="row">
-                            Genre :
+                            Genre : {this.props.programmes.typeFilm}
                         </div>
                         <div className="row">
                             Casting :
                             <div className="col">
-                                1ere image
+                                {this.props.programmes.castingImage[image[0]]}
+                                {this.props.programmes.castingNom[nom[0]]}
                             </div>
                             <div className="col">
-                                2eme image
+                                {this.props.programmes.castingImage[image[1]]}
+                                {this.props.programmes.castingNom[nom[1]]}
                             </div>
                             <div className="col">
-                                3eme image
+                                {this.props.programmes.castingImage[image[2]]}
+                                {this.props.programmes.castingNom[nom[2]]}
                             </div>
                             <div className="col">
-                                4eme image
+                                {this.props.programmes.castingImage[image[3]]}
+                                {this.props.programmes.castingNom[nom[3]]}
                             </div>
                         </div>
                     </div>
