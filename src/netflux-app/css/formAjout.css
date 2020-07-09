@@ -1,3 +1,10 @@
 section {
-    color: grey;
+    color: rgb(184, 184, 184);
+}
+aside label{
+    font-size: 14px;
+}
+
+.textCenter {
+    text-align: center;
 }
