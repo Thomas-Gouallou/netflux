@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import {DataService} from "./DataService"
 import {withRouter} from "react-router-dom"
+import './css./image.css'
+
 class Programme extends Component {
     constructor(props) {
         super(props)
