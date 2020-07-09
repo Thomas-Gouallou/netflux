@@ -4,6 +4,7 @@ import { DataService } from './DataService';
 
 import Series from './Series'
 import Films from './Films'
+import Carousel from './carousel/Carousel'
 
 
 class Acceuil extends Component {
@@ -19,7 +20,7 @@ class Acceuil extends Component {
     render() {
         return (
             <main>
-                
+                <Carousel></Carousel>
                 <Series programmes={this.state.programmes}></Series>
                 <Films programmes={this.state.programmes}></Films>
             </main>
