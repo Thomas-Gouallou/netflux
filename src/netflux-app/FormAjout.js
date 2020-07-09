@@ -61,4 +61,4 @@ class FormAjout extends Component {
     }
 }
 
-export default withRouter(FormAjout)
+export default FormAjout

@@ -29,9 +29,7 @@ class Header extends Component {
                     <form class="form-inline my-2 my-lg-0 col">
                         <input class="form-control mr-sm-2" type="search" placeholder="Rechercher"/>
                     </form>
-                    <span class="navbar-text text-danger ">
-                        <Link to= '/Search' className="nav-link text-danger">Rechercher</Link>
-                    </span>
+                    
                     <span class="navbar-text text-danger col-2">
                         <Link to= '/Form' className="nav-link text-danger">Ajouter un film/une série</Link>
                     </span>
