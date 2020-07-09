@@ -6,11 +6,13 @@ footer {
 footer div {
     justify-content: space-between;
 }
-footer button {
+footer a, a:hover, a:visited {
     color:white;
     background-color: black;
     border: none;
+    margin: 5px;
 }
 .btnSocial {
     font-size: 25px;
 }
+
