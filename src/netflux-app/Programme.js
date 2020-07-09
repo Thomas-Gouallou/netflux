@@ -5,6 +5,7 @@ class Programme extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            programme : DataService.programme
             // isFavoris : (DataService.favorisAnnonces.find(e => e.title == this.props.annonce.title) != undefined)
         }
     }
@@ -31,7 +32,7 @@ class Programme extends Component {
         return(
             <div className="container">
                 <div className="row">
-                    <img className="col" onClick={this.redirectTo}  src={this.props.programmes.imageSmall}/>
+                    <img className="col" onClick={this.redirectTo}  src={this.props.programme.imageSmall}/>
                 </div>
             </div>
         )

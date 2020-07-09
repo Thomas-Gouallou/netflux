@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Programme from './DetailProgramme'
+import Programme from './Programme'
 import { DataService } from './DataService';
 
 class Films extends Component {

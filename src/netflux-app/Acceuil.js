@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { DataService } from './DataService';
-import Programme from './DetailProgramme'
+
 import Series from './Series'
 import Films from './Films'
 
@@ -12,6 +12,7 @@ class Acceuil extends Component {
         super(props)
         this.state = {
             programmes: DataService.programmes
+
         }
     }
     

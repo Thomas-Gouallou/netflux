@@ -13,45 +13,45 @@ class DetailProgramme extends Component{
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col">
-                        <img src={this.props.programme.image}/>
+                    <div className="col-2 ml-0">
+                        <img src={this.state.programme.imageBig}/>
                     </div>
-                    <div className="col">
-                        <div className="row">
-                            Titre : {this.props.programme.title}
+                    <div className="col-10">
+                        <div className="row text-white">
+                            Titre : {this.state.programme.title}
                         </div>
-                        <div className="row">
-                            Note : {this.props.programme.rating}
+                        <div className="row text-white">
+                            Note : {this.state.programme.rating}
                         </div>
-                        <div className="row">
-                            Durée : {this.props.programme.duration}
+                        <div className="row text-white">
+                            Durée : {this.state.programme.duration}
                         </div>
-                        <div className="row">
-                            Date de sortie : {this.props.programme.release}
+                        <div className="row text-white">
+                            Date de sortie : {this.state.programme.release}
                         </div>
-                        <div className="row">
-                            Description : {this.props.programme.description}
+                        <div className="row text-white">
+                            Description : {this.state.programme.description}
                         </div>
-                        <div className="row">
-                            Genre : {this.props.programme.typeFilm}
+                        <div className="row text-white">
+                            Genre : {this.state.programme.typeFilm}
                         </div>
-                        <div className="row">
-                            Casting :
-                            <div className="col">
-                                <img src={this.props.programme.castingImage[0]}/>
-                                {this.props.programme.castingNom[0]}
+                        <div className="row text-white">
+                            Casting : <hr></hr>
+                            <div className="col-3">
+                                <img src={this.state.programme.castingImage[0]}/>
+                                {this.state.programme.castingNom[0]}
                             </div>
-                            <div className="col">
-                                <img src={this.props.programme.castingImage[1]}/>
-                                {this.props.programme.castingNom[1]}
+                            <div className="col-3">
+                                <img src={this.state.programme.castingImage[1]}/>
+                                {this.state.programme.castingNom[1]}
                             </div>
-                            <div className="col">
-                                <img src={this.props.programme.castingImage[2]}/>
-                                {this.props.programme.castingNom[2]}
+                            <div className="col-3">
+                                <img src={this.state.programme.castingImage[2]}/>
+                                {this.state.programme.castingNom[2]}
                             </div>
-                            <div className="col">
-                                <img src={this.props.programme.castingImage[3]}/>
-                                {this.props.programme.castingNom[3]}
+                            <div className="col-3">
+                                <img src={this.state.programme.castingImage[3]}/>
+                                {this.state.programme.castingNom[3]}
                             </div>
                         </div>
                     </div>

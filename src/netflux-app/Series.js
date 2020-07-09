@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Programme from './DetailProgramme'
+import Programme from './Programme'
 
 class Series extends Component {
     constructor(props) {
