@@ -9,12 +9,13 @@ class Footer extends Component {
         return (
             <footer className="container">
                 <hr/>
+
                 <div className="row">
                 <div className="col-2">
-                    <button className="fa fa-facebook-square"></button>
-                    <button className="fa fa-twitter-square"></button>
-                    <button className="fa fa-instagram"></button>
-                    <button className="fa fa-youtube"></button>
+                    <button className="fa fa-facebook-square btnSocial"></button>
+                    <button className="fa fa-twitter-square btnSocial"></button>
+                    <button className="fa fa-instagram btnSocial"></button>
+                    <button className="fa fa-youtube btnSocial"></button>
                 </div>
                 <div className="col-3">
                     &copy; Tomu, Elena, Thomas
