@@ -2,7 +2,8 @@ import React, { Component } from "react"
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 import Header from "./Header.js"
 import Footer from "./Footer"
-import FormAjout from "./FormAjout.js"
+import FormAjout from "./FormAjout"
+import Acceuil from "./Acceuil.js"
 
 export class NetfluxNav extends Component {
 
@@ -12,21 +13,13 @@ export class NetfluxNav extends Component {
                 <Header></Header>
                 <Switch>
                     <Route path='/' exact>
-                        <></>
+                        <Acceuil></Acceuil>
                     </Route>
-                    <Route  >
-                        <></>
+                    <Route path='/Form' exact>
+                        <FormAjout></FormAjout>
                     </Route>
-                    <Route >
-                        < ></>
-                    </Route>
-                    <Route >
-                        <></>
-                    </Route><Route >
-                        <></>
-                    </Route>
+                                       
                 </Switch>
-                <FormAjout></FormAjout>
                 <Footer></Footer>
             </BrowserRouter>
         )
