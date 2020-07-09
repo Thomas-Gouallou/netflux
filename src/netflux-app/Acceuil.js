@@ -5,7 +5,6 @@ import Programme from './Programme'
 import Series from './Series'
 import Films from './Films'
 
-<<<<<<< HEAD
 
 class Acceuil extends Component {
 
@@ -15,7 +14,6 @@ class Acceuil extends Component {
             programmes: []
         }
     }
-
     
     render() {
         return (
@@ -24,12 +22,6 @@ class Acceuil extends Component {
                 <Series></Series>
                 <Films></Films>
             </main>
-=======
-class Acceuil extends Component {
-    render() {
-        return(
-<div> Blablabla</div>
->>>>>>> dffa5556418d5e052fc9fae4cff92d3a5c513f1e
         )
     }
 }
