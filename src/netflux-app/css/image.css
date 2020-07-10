@@ -1,4 +1,7 @@
-
+#i{
+    width: 10px;
+    height: 200px;
+}
 
 #i:hover{
     transition: all 1s ease;

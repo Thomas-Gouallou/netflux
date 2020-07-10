@@ -12,28 +12,6 @@ class AcceuilSeries extends Component {
         }
     }
 
-<<<<<<< HEAD
-    filtre=(categ)=> {
-        let ligne = []
-        this.state.programmes.filter(a => (a.category == "serie") && (a.typeFilm.includes(categ))).map((element) => {
-            ligne.push(<div>
-                {categ}
-                <Programme programme={element}></Programme>
-            </div>)
-        })
-    }
-
-    componentDidMount() {
-        
-        ApiService.get('programmes').then(response => {
-            this.setState({
-                programmes : response.data
-            })
-        })
-    }
-    
-=======
->>>>>>> bcbd978ed67f2d5455f98b7226d5110868b94e16
     render() {
         let ligne = []
         for (let i = 0; i < DataService.categories.length; i++) {

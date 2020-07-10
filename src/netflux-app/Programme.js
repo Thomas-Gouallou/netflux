@@ -32,7 +32,7 @@ class Programme extends Component {
 
     render() {
         return(
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
                     <img id="i" className="col" onClick={this.redirectTo}  src={this.props.programme.imageSmall}/>
                 </div>
