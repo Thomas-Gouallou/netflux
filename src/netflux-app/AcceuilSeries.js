@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Programme from './Programme'
 import { DataService } from './DataService';
 import './css/acceuilFilmsSeries.css'
+import { ApiService } from './ApiService';
 
 class AcceuilSeries extends Component {
     constructor(props) {
@@ -21,6 +22,15 @@ class AcceuilSeries extends Component {
         })
     }
 
+    componentDidMount() {
+        
+        ApiService.get('programmes').then(response => {
+            this.setState({
+                programmes : response.data
+            })
+        })
+    }
+    
     render() {
         return (
             <section className="container">

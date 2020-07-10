@@ -9,8 +9,8 @@ class Header extends Component {
             <header className="container-fluid">
                 <nav className="navbar navbar-expand-lg  bg-dark text-alert row">
                     
-                    <a className="nav-item ">
-                            <Link to='/' className="nav-link ="><img src={Netflux} alt="logo netflux"/></Link>
+                    <a className="navbar-brand">
+                            <Link to='/' className="nav-link "><img src={Netflux} alt="logo netflux"/></Link>
                     </a>
                     <ul className="navbar-nav mr-auto col-6">
                         <li className="nav-item">
