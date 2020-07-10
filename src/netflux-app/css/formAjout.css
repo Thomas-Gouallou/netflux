@@ -5,6 +5,11 @@ aside label{
     font-size: 14px;
 }
 
-.textCenter {
-    text-align: center;
+.titleBold, .confirm {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.confirm {
+    font-style: italic;
 }

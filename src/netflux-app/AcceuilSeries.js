@@ -12,6 +12,7 @@ class AcceuilSeries extends Component {
         }
     }
 
+<<<<<<< HEAD
     filtre=(categ)=> {
         let ligne = []
         this.state.programmes.filter(a => (a.category == "serie") && (a.typeFilm.includes(categ))).map((element) => {
@@ -31,43 +32,22 @@ class AcceuilSeries extends Component {
         })
     }
     
+=======
+>>>>>>> bcbd978ed67f2d5455f98b7226d5110868b94e16
     render() {
+        let ligne = []
+        for (let i = 0; i < DataService.categories.length; i++) {
+            this.state.programmes.filter(a => (a.category == "serie") && (a.typeFilm.includes(DataService.categories[i]))).map((element) => {
+                ligne.push(<div>
+                    {DataService.categories[i]}
+                    <Programme programme={element}></Programme>
+                </div>)
+            })
+        }
         return (
             <section className="container">
                 <h2 className="text-center">Séries</h2>
-
-                {/* {for (let i=0; i<DataService.categories.length; i++) {
-
-                }} */}
-
-                {()=>{this.filtre("Aventure")}}
-                {this.filtre("Comédie")}
-                {this.filtre("Fantastique")}
-{}
-                {/* <div>
-                    Aventures :
-                {this.state.programmes.filter(a => (a.category == "serie") && (a.typeFilm.includes("aventure"))).map((element) => {
-                    return (
-                        <Programme programme={element}></Programme>
-                    )
-                })}
-                </div>
-                <div>
-                    Comédies :
-                {this.state.programmes.filter(a => (a.category == "serie") && (a.typeFilm.includes("comedie"))).map((element) => {
-                    return (
-                        <Programme programme={element}></Programme>
-                    )
-                })}
-                </div>
-                <div>
-                    Fantastique :
-                {this.state.programmes.filter(a => (a.category == "serie") && (a.typeFilm.includes("fantastique"))).map((element) => {
-                    return (
-                        <Programme programme={element}></Programme>
-                    )
-                })}
-                </div> */}
+                {ligne}
             </section>
         )
     }

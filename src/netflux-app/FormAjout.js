@@ -84,20 +84,20 @@ class FormAjout extends Component {
                     <input type="number" onChange={this.setData} name="nbrSaisons" className="col-10 form-control form" />
                 </div>
             </div>)
-            DataService.programme.category="serie"
+            DataService.programme.category = "serie"
             this.setState({
                 ligneSeries: ligneSerie,
                 placeholderTitre: "Titre de la série"
             })
         }
         else {
-            DataService.programme.category="film"
+            DataService.programme.category = "film"
             this.setState({
                 ligneSeries: [],
                 placeholderTitre: "Titre du film"
             })
-            if(e.target.value != "film" && e.target.value != "serie") {
-                DataService.programme.category=""
+            if (e.target.value != "film" && e.target.value != "serie") {
+                DataService.programme.category = ""
                 this.setState({
                     ligneSeries: [],
                     placeholderTitre: "Titre"
@@ -118,16 +118,22 @@ class FormAjout extends Component {
     }
 
     render() {
+        let ligne = []
+        for (let i = 0; i < DataService.categories.length; i++) {
+            ligne.push(<div>
+                <label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value={DataService.categories[i]} />{DataService.categories[i]}</label>
+            </div>)
+        }
         return (
             <section className="container form">
                 <nav className="row">
                     <article className="col-10">
                         <div className="row m-2 justify-content-center">
                             <div className="col-8">
-                                <div>Titre</div>
+                                <div className="titleBold">Titre</div>
                                 <input type="text" onChange={this.setData} name="title" className="col-10 form-control form" placeholder={this.state.placeholderTitre} />
                             </div>
-                            <div className="col-3"><br/>
+                            <div className="col-3"><br />
                                 <select class="form-control" name="category" onChange={this.switchFilmSerie}>
                                     <option>--Categorie--</option>
                                     <option value="film">Film</option>
@@ -151,10 +157,10 @@ class FormAjout extends Component {
                             {this.state.ligneSeries}
                         </div>
                         <div className="row m-2 justify-content-center">
-                            <div className="col-10">Descrption</div>
+                            <div className="col-10 titleBold">Descrption</div>
                             <textarea onChange={this.setData} name="description" rows="15" className="col-10 form-control form" placeholder="Description"></textarea>
                         </div><br />
-                        <div className="text-center">Casting</div>
+                        <div className="text-center titleBold">Casting</div>
                         <div className="row m-2 justify-content-center">
                             <div className="col-3">
                                 <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="1" placeholder="Prénom Nom" />
@@ -179,24 +185,11 @@ class FormAjout extends Component {
                         </div>
                     </article>
                     <aside className="col-2">
-                        <div>Genre</div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Horreur" />Horreur</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Drame" />Drame</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Comédie" />Comédie</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Aventure" />Aventure</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Fantastique" />Fantastique</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Action" />Action</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Historique" />Historique</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Thriller" />Thriller</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Science-fiction" />Science-fiction</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Catastrophe" />Catastrophe</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Western" />Western</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Policier" />Policier</label></div>
-                        <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Policier" />Romance</label></div><br/>
-
-                        <div>L'image d'affiche
-                        <input type='text' onChange={this.setData} className="form-control form" name="imageBig" placeholder="URL de l'image" /></div><br/>
-                        <div>L'image d'acceuil
+                        <div className="titleBold">Genre</div>
+                        {ligne}
+                        <div>Grande image
+                        <input type='text' onChange={this.setData} className="form-control form" name="imageBig" placeholder="URL de l'image" /></div><br />
+                        <div>Image du caroussel
                         <input type='text' onChange={this.setData} className="form-control form" name="imageSmall" placeholder="URL de l'image" /></div>
                     </aside>
                 </nav>
