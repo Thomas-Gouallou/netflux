@@ -26,14 +26,14 @@ class Header extends Component {
                             <Link to= '/MaListe' className="nav-link text-danger">Ma liste</Link>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0 col">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Rechercher"/>
+                    <form className="form-inline my-2 my-lg-0 col">
+                        <input className="form-control mr-sm-2" type="search" placeholder="Rechercher"/>
                     </form>
                     
-                    <span class="navbar-text text-danger col-2">
+                    <span className="navbar-text text-danger col-2">
                         <Link to= '/Form' className="nav-link text-danger">Ajouter un film/une série</Link>
                     </span>
-                    <span class="navbar-text text-danger col">
+                    <span className="navbar-text text-danger col">
                         <Link to= '/Compte' className="nav-link text-danger">Mon Compte</Link>
                     </span>
                 </nav>

@@ -3,10 +3,30 @@ import { withRouter, Link } from 'react-router-dom';
 import { DataService } from './DataService';
 import './css/formAjout.css'
 
+import { ApiService } from './ApiService';
+
 class FormAjout extends Component {
     constructor(props) {
         super(props)
         this.state = {
+
+            programme : DataService.programme,
+            // programme : {
+            //     category: "",
+            //     id: 0,
+            //     imageBig: "",
+            //     imageSmall: "",
+            //     title: "",
+            //     rating: 0,
+            //     duration: 0,
+            //     release: "",
+            //     description: "",
+            //     typeFilm: [],
+            //     castingImage: [],
+            //     castingNom: [],
+            //     nbrSaisons: 0,
+            //     nbrEpisodes: 0
+            // },
             ligneSeries: [],
             castingImage: [],
             castingName: [],
@@ -24,26 +44,31 @@ class FormAjout extends Component {
     // }
 
     confirm = () => {
+        
         DataService.programme.castingImage = this.state.castingImage
         DataService.programme.castingNom = this.state.castingName
-        DataService.programmes.push(DataService.programme)
-        DataService.programme = {
-            category: "",
-            id: 0,
-            imageBig: "",
-            imageSmall: "",
-            title: "",
-            rating: 0,
-            duration: 0,
-            release: "",
-            description: "",
-            typeFilm: [],
-            castingImage: [],
-            castingNom: [],
-            nbrSaisons: 0,
-            nbrEpisodes: 0
-        }
-        this.props.history.push('./')
+        ApiService.post('Form', this.state.programme).then(res=> {
+            this.props.history.push('/') 
+        })  
+        
+        // DataService.programmes.push(DataService.programme)
+        // DataService.programme = {
+        //     category: "",
+        //     id: 0,
+        //     imageBig: "",
+        //     imageSmall: "",
+        //     title: "",
+        //     rating: 0,
+        //     duration: 0,
+        //     release: "",
+        //     description: "",
+        //     typeFilm: [],
+        //     castingImage: [],
+        //     castingNom: [],
+        //     nbrSaisons: 0,
+        //     nbrEpisodes: 0
+        // }
+        // this.props.history.push('./')
     }
 
     switchFilmSerie = (e) => {
