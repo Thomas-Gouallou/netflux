@@ -12,18 +12,22 @@ class AcceuilFilms extends Component {
     }
 
     render() {
+        let ligne = []
+        for (let i = 0; i < DataService.categories.length; i++) {
+            this.state.programmes.filter(a => (a.category == "film") && (a.typeFilm.includes(DataService.categories[i]))).map((element) => {
+                ligne.push(<div className="titreCategory">
+                    {DataService.categories[i]}
+                    <Programme programme={element}></Programme>
+                </div>)
+            })
+        }
         return (
-            <div className="container">
-                <h2>Films</h2>
-                {this.state.programmes.filter(a => (a.category == "film")).map((element) => {
-                    return (
-                        <Programme programme={element}></Programme>
-                    )
-                })}
-            </div>
+            <section className="container">
+                <h2 className="text-center">Films</h2>
+                {ligne}
+            </section>
         )
     }
-
 }
 
 export default AcceuilFilms
