@@ -17,13 +17,13 @@ class Header extends Component {
                             <Link to='/Series' className="nav-link text-danger">Séries</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to= '/Films' className="nav-link text-danger">Films</Link>
+                            <Link to='/Films' className="nav-link text-danger">Films</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to= '/Nouveaute' className="nav-link text-danger">Nouveautés</Link>
+                            <Link to='/Nouveaute' className="nav-link text-danger">Nouveautés</Link>
                         </li>
                         <li className="nav-item ">
-                            <Link to= '/MaListe' className="nav-link text-danger">Ma liste</Link>
+                            <Link to='/MaListe' className="nav-link text-danger">Ma liste</Link>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0 col">

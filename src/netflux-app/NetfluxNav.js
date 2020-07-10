@@ -30,7 +30,10 @@ export class NetfluxNav extends Component {
                     </Route>   
                     <Route path='/Films' exact>
                         <AcceuilFilms></AcceuilFilms>
-                    </Route>   
+                    </Route>  
+                    <Route path='/Nouveaute' exact>
+                        
+                    </Route>  
                 </Switch>
                 <Footer></Footer>
             </BrowserRouter>
