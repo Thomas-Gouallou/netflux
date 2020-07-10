@@ -170,7 +170,7 @@ class FormAjout extends Component {
                         <div><label class="checkbox-inline"><input onChange={this.setTypeFilm} type="checkbox" value="Policier" />Romance</label></div><br/>
 
                         <div>L'image d'affiche
-                        <input type='text' onChange={this.setData} className="form-control form" name="imageBig" placeholder="URL de l'image" /></div><br />
+                        <input type='text' onChange={this.setData} className="form-control form" name="imageBig" placeholder="URL de l'image" /></div><br/>
                         <div>L'image d'acceuil
                         <input type='text' onChange={this.setData} className="form-control form" name="imageSmall" placeholder="URL de l'image" /></div>
                     </aside>

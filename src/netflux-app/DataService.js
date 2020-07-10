@@ -88,5 +88,5 @@ export class DataService {
 
     static favorisProgrammes = []
 
-    static categories = ["Comédie", "Horreur", "Drame", "Aventure", "Fantastique", "Action", "Historique", "Thriller", "Science-fiction", "Catastrophe", "Western", "Policier", "Romance"]
+    static categories = ["Action", "Aventure", "Catastrophe", "Comédie", "Drame", "Fantastique", "Historique", "Horreur", "Policier", "Romance", "Science-fiction", "Thriller", "Western"]
 }

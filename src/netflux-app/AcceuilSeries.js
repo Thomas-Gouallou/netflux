@@ -11,15 +11,30 @@ class AcceuilSeries extends Component {
         }
     }
 
-    // filtre = () => {
-
-    // }
+    filtre=(categ)=> {
+        let ligne = []
+        this.state.programmes.filter(a => (a.category == "serie") && (a.typeFilm.includes(categ))).map((element) => {
+            ligne.push(<div>
+                {categ}
+                <Programme programme={element}></Programme>
+            </div>)
+        })
+    }
 
     render() {
         return (
             <section className="container">
                 <h2 className="text-center">Séries</h2>
-                <div>
+
+                {/* {for (let i=0; i<DataService.categories.length; i++) {
+
+                }} */}
+
+                {()=>{this.filtre("Aventure")}}
+                {this.filtre("Comédie")}
+                {this.filtre("Fantastique")}
+{}
+                {/* <div>
                     Aventures :
                 {this.state.programmes.filter(a => (a.category == "serie") && (a.typeFilm.includes("aventure"))).map((element) => {
                     return (
@@ -42,7 +57,7 @@ class AcceuilSeries extends Component {
                         <Programme programme={element}></Programme>
                     )
                 })}
-                </div>
+                </div> */}
             </section>
         )
     }
