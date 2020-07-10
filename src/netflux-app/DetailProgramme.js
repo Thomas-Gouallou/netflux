@@ -5,11 +5,29 @@ class DetailProgramme extends Component{
     constructor(props){
         super(props)
         this.state = {
-            programme : DataService.programme
+            programme : DataService.programme,
+            tabEmpty : []
         }
     
     }
+
+    
+
+
+
     render(){
+            let tabEmpty = []
+            if (this.state.programme.category == 'film'){
+                tabEmpty.push(<div>Durée : {this.state.programme.duration} minutes</div>)
+                
+            } else{
+            tabEmpty.push(
+            <div>Nombre de saisons :  {this.state.programme.nbrSaisons} <br/>
+            Nombre d épisodes : {this.state.programme.nbrEpisodes}</div>)
+                
+            }
+            
+
         return (
             <div className="container-fluid">
                 <div className="row">
@@ -24,7 +42,7 @@ class DetailProgramme extends Component{
                             Note : {this.state.programme.rating}
                         </div>
                         <div className="row text-white">
-                            Durée : {this.state.programme.duration} minutes
+                                    {tabEmpty}                 
                         </div>
                         <div className="row text-white">
                             Date de sortie : {this.state.programme.release}

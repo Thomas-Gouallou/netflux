@@ -7,7 +7,7 @@ class Header extends Component {
     render() {
         return (
             <header className="container-fluid">
-                <nav className="navbar navbar-expand-lg navbar-light bg-dark text-alert row">
+                <nav className="navbar navbar-expand-lg  bg-dark text-alert row">
                     
                     <a className="nav-item ">
                             <Link to='/' className="nav-link ="><img src={Netflux} alt="logo netflux"/></Link>
