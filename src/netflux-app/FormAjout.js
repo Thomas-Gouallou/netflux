@@ -2,31 +2,13 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { DataService } from './DataService';
 import './css/formAjout.css'
-
 import { ApiService } from './ApiService';
 
 class FormAjout extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
-            programme : DataService.programme,
-            // programme : {
-            //     category: "",
-            //     id: 0,
-            //     imageBig: "",
-            //     imageSmall: "",
-            //     title: "",
-            //     rating: 0,
-            //     duration: 0,
-            //     release: "",
-            //     description: "",
-            //     typeFilm: [],
-            //     castingImage: [],
-            //     castingNom: [],
-            //     nbrSaisons: 0,
-            //     nbrEpisodes: 0
-            // },
+            programme: DataService.programme,
             ligneSeries: [],
             castingImage: [],
             castingName: [],
@@ -39,18 +21,17 @@ class FormAjout extends Component {
         DataService.programme.id = DataService.programmes.length + 1
     }
 
-    // setTypeFilm = (e) => {
-
-    // }
-
     confirm = () => {
-        
+
         DataService.programme.castingImage = this.state.castingImage
         DataService.programme.castingNom = this.state.castingName
-        ApiService.post('Form', this.state.programme).then(res=> {
-            this.props.history.push('/') 
-        })  
-        
+        this.setState({
+            programme: DataService.programme
+        })
+        ApiService.post('Form', this.state.programme).then(res => {
+            this.props.history.push('/')
+        })
+
         // DataService.programmes.push(DataService.programme)
         // DataService.programme = {
         //     category: "",
@@ -75,11 +56,11 @@ class FormAjout extends Component {
         let ligneSerie = []
         if (e.target.value == "serie") {
             ligneSerie.push(<div className="row m-2 justify-content-around">
-                <div className="col-5">
+                <div className="col-6">
                     <div>Nombre d'épisodes</div>
                     <input type="number" onChange={this.setData} name="nbrEpisodes" className="col-10 form-control form" />
                 </div>
-                <div className="col-5">
+                <div className="col-6">
                     <div>Nombre de saisons</div>
                     <input type="number" onChange={this.setData} name="nbrSaisons" className="col-10 form-control form" />
                 </div>
@@ -90,21 +71,24 @@ class FormAjout extends Component {
                 placeholderTitre: "Titre de la série"
             })
         }
-        else {
+        else if (e.target.value == "film") {
+            ligneSerie.push(<div className="row m-2 justify-content-around"><div className="col-10"><br/><div>Durée</div>
+                <input type="number" onChange={this.setData} name="duration" className="col-10 form-control form" /></div></div>)
             DataService.programme.category = "film"
             this.setState({
-                ligneSeries: [],
+                ligneSeries: ligneSerie,
                 placeholderTitre: "Titre du film"
             })
-            if (e.target.value != "film" && e.target.value != "serie") {
-                DataService.programme.category = ""
-                this.setState({
-                    ligneSeries: [],
-                    placeholderTitre: "Titre"
-                })
-            }
+        }
+        else {
+            DataService.programme.category = ""
+            this.setState({
+                ligneSeries: [],
+                placeholderTitre: "Titre"
+            })
         }
     }
+
     setCastingImage = (e) => {
         DataService.programme.castingImage[e.target.name] = e.target.value
     }
@@ -142,19 +126,15 @@ class FormAjout extends Component {
                             </div>
                         </div>
                         <div className="row m-2 justify-content-center">
-                            <div className="col-3">
-                                <div>Durée</div>
-                                <input type="number" onChange={this.setData} name="duration" className="col-10 form-control form" />
-                            </div>
-                            <div className="col-3">
+                            <div className="col-5">
                                 <div>Date de sortie</div>
-                                <input type="date" onChange={this.setData} name="release" className="col-10 form-control form" />
-                            </div>
-                            <div className="col-3">
+                                <input type="date" onChange={this.setData} name="release" className="col-10 form-control form" /><br />
                                 <div>Note</div>
                                 <input type="number" onChange={this.setData} name="rating" className="col-10 form-control form" />
                             </div>
-                            {this.state.ligneSeries}
+                            <div className="col-5">
+                                {this.state.ligneSeries}
+                            </div>
                         </div>
                         <div className="row m-2 justify-content-center">
                             <div className="col-10 titleBold">Descrption</div>
@@ -187,13 +167,13 @@ class FormAjout extends Component {
                     <aside className="col-2">
                         <div className="titleBold">Genre</div>
                         {ligne}
+                        <br/>
                         <div>Grande image
                         <input type='text' onChange={this.setData} className="form-control form" name="imageBig" placeholder="URL de l'image" /></div><br />
                         <div>Image du caroussel
                         <input type='text' onChange={this.setData} className="form-control form" name="imageSmall" placeholder="URL de l'image" /></div>
                     </aside>
                 </nav>
-
             </section>
         )
     }

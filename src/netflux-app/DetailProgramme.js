@@ -1,5 +1,6 @@
 import  React, {Component } from 'react';
 import { DataService } from './DataService';
+import { ApiService } from './ApiService';
 
 class DetailProgramme extends Component{
     constructor(props){
@@ -8,12 +9,15 @@ class DetailProgramme extends Component{
             programme : DataService.programme,
             tabEmpty : []
         }
-    
     }
 
-    
-
-
+    componentDidMount() {
+        ApiService.get('programmes').then(response => {
+            this.setState({
+                programmes : response.data
+            })
+        })
+    }
 
     render(){
             let tabEmpty = []
