@@ -13,14 +13,12 @@ class AcceuilFilms extends Component {
     }
 
     componentDidMount() {
-        
         ApiService.get('programmes').then(response => {
             this.setState({
                 programmes : response.data
             })
         })
     }
-    
     render() {
         let ligne = []
         for (let i = 0; i < DataService.categories.length; i++) {

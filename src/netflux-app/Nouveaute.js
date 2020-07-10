@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Programme from './Programme'
 import { DataService } from './DataService';
+import { ApiService } from './ApiService';
 
 class Nouveaute extends Component {
     constructor(props) {
@@ -10,20 +11,27 @@ class Nouveaute extends Component {
         }
     }
 
+    componentDidMount() {
+        ApiService.get('programmes').then(response => {
+            this.setState({
+                programmes : response.data
+            })
+        })
+    }
+
     render() {
-        // let ligne = []
-        // for (let i = 0; i < DataService.categories.length; i++) {
-        //     this.state.programmes.filter(a => (a.release >= ) && (a.typeFilm.includes(DataService.categories[i]))).map((element) => {
-        //         ligne.push(<div className="titreCategory">
-        //             {DataService.categories[i]}
-        //             <Programme programme={element}></Programme>
-        //         </div>)
-        //     })
-        // }
+        let current_date = new Date()
+        let year = current_date.getFullYear()
+
         return (
             <section className="container">
-                <h2 className="text-center">Nouveautés</h2>
-                {/* {ligne} */}
+                {this.state.programmes.filter(a => (a.release.includes(year)) || (a.release.includes(year-1))).map((element) => {
+                    return (
+                        <div>
+                        <Programme programme={element}></Programme>
+                        </div>
+                    )
+                })}
             </section>
         )
     }
