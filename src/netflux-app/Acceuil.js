@@ -31,9 +31,12 @@ class Acceuil extends Component {
 
     render() {
         return (
-            <main>
+            <main className="container-fluid">
                 <Carousel></Carousel>
+                <div className="m-5"><h2>Séries</h2>
                 <Series programmes={this.state.programmes}></Series>
+                </div>
+                <h2>Films</h2>
                 <Films programmes={this.state.programmes}></Films>
             </main>
         )

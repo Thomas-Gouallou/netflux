@@ -13,10 +13,10 @@ class Series extends Component {
 
     render() {
         return (
-            <div className="container">
-                {this.props.programmes.filter(a=> (a.category=="serie")).map((element) => {
+            <div className="row">
+                {this.props.programmes.filter(a=> (a.category=="serie")).map((element, index) => {
                     return (
-                        <Programme programme={element}></Programme>
+                        <Programme key={index} programme={element}></Programme>
                     )
                 })}
             </div>
