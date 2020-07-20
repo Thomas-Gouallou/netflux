@@ -32,8 +32,14 @@ class Programme extends Component {
 
     render() {
         return(
-            <div className="col-2">
-                    <img id="i" onClick={this.redirectTo}  src={this.props.programme.imageSmall}/>
+            <div className="card text-white col-2">
+                    <img className="card-img" id="i" onClick={this.redirectTo}  src={this.props.programme.imageSmall}/>
+                    <div className="card-img-overlay" >
+                        <button className="playBtn" onClick={this.redirectTo}>&#x27A4;</button>
+                        <h5 className="card-title">{this.props.programme.title}</h5>
+                        <p className="card-text">{this.props.programme.description}</p>
+                        
+                    </div>
             </div>
         )
     }
