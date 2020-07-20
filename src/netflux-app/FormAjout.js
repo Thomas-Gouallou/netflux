@@ -8,48 +8,51 @@ class FormAjout extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            programme: DataService.programme,
+            programme: [],
             ligneSeries: [],
             castingImage: [],
             castingName: [],
-            placeholderTitre: "Titre"
+            placeholderTitre: "Titre",
+            programmes:[]
         }
+    }
+
+    componentDidMount() {
+        ApiService.get('programmes').then(response => {
+            this.setState({
+                programmes : response.data
+            })
+        })
     }
 
     setData = (e) => {
         DataService.programme[e.target.name] = e.target.value
-        DataService.programme.id = DataService.programmes.length + 1
     }
 
     confirm = () => {
+        DataService.programme.id = this.state.programmes.length + 1
+        console.log(DataService.programme)
 
-        DataService.programme.castingImage = this.state.castingImage
-        DataService.programme.castingNom = this.state.castingName
-        this.setState({
-            programme: DataService.programme
-        })
-        ApiService.post('Form', this.state.programme).then(res => {
+        ApiService.post('Form', DataService.programme).then(res => {
             this.props.history.push('/')
         })
 
-        // DataService.programmes.push(DataService.programme)
-        // DataService.programme = {
-        //     category: "",
-        //     id: 0,
-        //     imageBig: "",
-        //     imageSmall: "",
-        //     title: "",
-        //     rating: 0,
-        //     duration: 0,
-        //     release: "",
-        //     description: "",
-        //     typeFilm: [],
-        //     castingImage: [],
-        //     castingNom: [],
-        //     nbrSaisons: 0,
-        //     nbrEpisodes: 0
-        // }
-        // this.props.history.push('./')
+        DataService.programme = {
+            category: "",
+            id: 0,
+            imageBig: "",
+            imageSmall: "",
+            title: "",
+            rating: 0,
+            duration: 0,
+            release: "",
+            description: "",
+            typeFilm: [],
+            castingImage: [],
+            castingNom: [],
+            nbrSaisons: 0,
+            nbrEpisodes: 0
+        }
     }
 
     switchFilmSerie = (e) => {
