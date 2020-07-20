@@ -19,6 +19,7 @@ class AcceuilFilms extends Component {
             })
         })
     }
+    
     render() {
         let ligne = []
         for (let i = 0; i < DataService.categories.length; i++) {

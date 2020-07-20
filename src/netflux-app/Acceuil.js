@@ -4,12 +4,7 @@ import { DataService } from './DataService';
 import Series from './Series'
 import Films from './Films'
 import Carousel from './carousel/Carousel'
-
-
 import { ApiService } from './ApiService';
-
-
-
 
 class Acceuil extends Component {
 
@@ -19,12 +14,11 @@ class Acceuil extends Component {
             programmes: DataService.programmes
         }
     }
-    
+
     componentDidMount() {
-        
         ApiService.get('programmes').then(response => {
             this.setState({
-                programmes : response.data
+                programmes: response.data
             })
         })
     }
