@@ -146,21 +146,21 @@ class FormAjout extends Component {
                         <div className="text-center titleBold">Casting</div>
                         <div className="row m-2 justify-content-center">
                             <div className="col-3">
+                                <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="0" placeholder="Prénom Nom" />
+                                <input type='text' onChange={this.setCastingImage} className="form-control form m-1" name="0" placeholder="URL de l'image" />
+                            </div>
+                            <div className="col-3">
                                 <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="1" placeholder="Prénom Nom" />
                                 <input type='text' onChange={this.setCastingImage} className="form-control form m-1" name="1" placeholder="URL de l'image" />
                             </div>
+
                             <div className="col-3">
                                 <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="2" placeholder="Prénom Nom" />
                                 <input type='text' onChange={this.setCastingImage} className="form-control form m-1" name="2" placeholder="URL de l'image" />
                             </div>
-
                             <div className="col-3">
                                 <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="3" placeholder="Prénom Nom" />
                                 <input type='text' onChange={this.setCastingImage} className="form-control form m-1" name="3" placeholder="URL de l'image" />
-                            </div>
-                            <div className="col-3">
-                                <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="4" placeholder="Prénom Nom" />
-                                <input type='text' onChange={this.setCastingImage} className="form-control form m-1" name="4" placeholder="URL de l'image" />
                             </div>
                         </div>
                         <div className="row justify-content-center">
