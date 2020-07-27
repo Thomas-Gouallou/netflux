@@ -11,7 +11,7 @@ class Acceuil extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            programmes: DataService.programmes
+            programmes: [],
         }
     }
 
@@ -28,11 +28,11 @@ class Acceuil extends Component {
             <main className="container-fluid">
                 <Carousel></Carousel>
                 <div className="m-5"><h2>Séries</h2>
-                <Series programmes={this.state.programmes}></Series>
+                    <Series programmes={this.state.programmes}></Series>
                 </div>
                 <div className="m-5"><h2>Films</h2>
-                <Films programmes={this.state.programmes}></Films>
-                </div> 
+                    <Films programmes={this.state.programmes}></Films>
+                </div>
             </main>
         )
     }

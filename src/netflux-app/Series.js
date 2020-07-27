@@ -9,8 +9,6 @@ class Series extends Component {
         super(props)
     }
 
-
-
     render() {
         return (
             <div className="row">
