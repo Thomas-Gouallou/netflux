@@ -9,6 +9,7 @@ import Series from "./Series.js"
 import AcceuilSeries from "./AcceuilSeries.js"
 import AcceuilFilms from "./AcceuilFilms.js"
 import Nouveaute from './Nouveaute'
+import Compte from './Compte'
 
 export class NetfluxNav extends Component {
 
@@ -34,6 +35,9 @@ export class NetfluxNav extends Component {
                     </Route>  
                     <Route path='/Nouveaute' exact>
                         <Nouveaute></Nouveaute>
+                    </Route>
+                    <Route path='/Compte' exact>
+                        <Compte></Compte>
                     </Route>  
                 </Switch>
                 <Footer></Footer>
