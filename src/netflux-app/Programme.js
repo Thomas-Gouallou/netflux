@@ -1,7 +1,10 @@
 import React, { Component } from "react"
 import {DataService} from "./DataService"
 import {withRouter} from "react-router-dom"
+import Carousel from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
 import './css/image.css'
+import './css/textCard.css'
 
 class Programme extends Component {
     constructor(props) {
@@ -32,15 +35,23 @@ class Programme extends Component {
 
     render() {
         return(
-            <div className="card text-white col-2">
+            
+            <div className="card text-white col-2 ">
                     <img className="card-img" id="i" onClick={this.redirectTo}  src={this.props.programme.imageSmall}/>
                     <div className="card-img-overlay" >
-                        <button className="playBtn" onClick={this.redirectTo}>&#x27A4;</button>
-                        <h5 className="card-title">{this.props.programme.title}</h5>
-                        <p className="card-text">{this.props.programme.description}</p>
-                        
+                        <div className="row">
+                            <button className="playBtn align-middle" onClick={this.redirectTo}>&#x27A4;</button>
+                            <button className="align-middle">&#43;</button>
+                        </div>
+                        <div>
+                            <h5 className="card-title row">{this.props.programme.title}</h5>
+                        </div>
+                        <div>
+                            <p className="card-text row" id="description">{this.props.programme.description}</p>
+                        </div>
                     </div>
             </div>
+            
         )
     }
 }

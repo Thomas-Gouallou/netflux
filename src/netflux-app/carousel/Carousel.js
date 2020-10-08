@@ -8,9 +8,9 @@ class Carousel extends Component {
         super(props)
         this.state = {
             slides: [
-                { title: 'titre Silde 1', content: 'Content slide 1', image: 'https://static.fnac-static.com/multimedia/Images/FD/Comete/116740/CCP_IMG_ORIGINAL/1515395.jpg' },
-                { title: 'titre Silde 2', content: 'Content slide 2', image: 'https://img.huffingtonpost.com/asset/5e30d8472400001b060b6384.jpeg?cache=XgAczkErO0&ops=crop_193_184_1071_763,scalefit_630_noupscale' },
-                { title: 'titre Silde 3', content: 'Content slide 3', image: 'https://img.huffingtonpost.com/asset/5da0a15521000042073443dc.jpeg?ops=scalefit_630_noupscale' },
+                { title: 'titre Silde 1', content: 'Content slide 1', image: 'http://fr.web.img6.acsta.net/r_1280_720/pictures/19/12/10/12/41/2871222.jpg' },
+                { title: 'titre Silde 2', content: 'Content slide 2', image: '//fr.web.img2.acsta.net/r_1280_720/medias/nmedia/18/35/14/33/18366867.jpg' },
+                { title: 'titre Silde 3', content: 'Content slide 3', image: 'http://fr.web.img4.acsta.net/r_1280_720/medias/nmedia/18/65/21/29/18837653.jpg' },
             ],
             indexActivation: undefined,
             style: {
@@ -46,7 +46,7 @@ class Carousel extends Component {
             indexActivation: tmpIndex
         })
         this.setState({
-            styleContainer: { ...this.state.styleContainer, transitionDuration: '1s', marginLeft: '' + valueTranslate + 'px' }
+            styleContainer: { ...this.state.styleContainer,  marginLeft: '' + valueTranslate + 'px' }
         })
     }
 

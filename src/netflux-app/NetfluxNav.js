@@ -9,15 +9,20 @@ import Series from "./Series.js"
 import AcceuilSeries from "./AcceuilSeries.js"
 import AcceuilFilms from "./AcceuilFilms.js"
 import Nouveaute from './Nouveaute'
+import Compte from './Compte'
+import CreationCompte from "./CreationCompte.js"
+import ConfirmationCreation from "./ConfirmationCreation.js"
+import Perdu from "./Perdu.js"
+import RenvoiMail from "./RenvoiMail.js"
 
-export class NetfluxNav extends Component {
+ class NetfluxNav extends Component {
 
     render() {
         return(
             <BrowserRouter>
                 <Header></Header>
                 <Switch>
-                    <Route path='/' exact>
+                    <Route path='/Acceuil' exact>
                         <Acceuil></Acceuil>
                     </Route>
                     <Route path='/Form' exact>
@@ -34,10 +39,27 @@ export class NetfluxNav extends Component {
                     </Route>  
                     <Route path='/Nouveaute' exact>
                         <Nouveaute></Nouveaute>
-                    </Route>  
+                    </Route>
+                    <Route path='/' exact>
+                        <Compte></Compte>
+                    </Route>
+                    <Route path='/CreationCompte' exact>
+                        <CreationCompte></CreationCompte>
+                    </Route>
+                    <Route path='/ConfirmationCreation' exact>
+                        <ConfirmationCreation></ConfirmationCreation>
+                    </Route>
+                    <Route path='/Perdu' exact>
+                        <Perdu></Perdu>
+                    </Route>
+                    <Route path='/RenvoiMail' exact>
+                        <RenvoiMail></RenvoiMail>
+                    </Route>    
                 </Switch>
                 <Footer></Footer>
             </BrowserRouter>
         )
     }
 }
+
+export default NetfluxNav

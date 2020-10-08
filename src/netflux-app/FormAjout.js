@@ -13,14 +13,14 @@ class FormAjout extends Component {
             castingImage: [],
             castingName: [],
             placeholderTitre: "Titre",
-            programmes:[]
+            programmes: [],
         }
     }
 
     componentDidMount() {
         ApiService.get('programmes').then(response => {
             this.setState({
-                programmes : response.data
+                programmes: response.data
             })
         })
     }
@@ -31,7 +31,6 @@ class FormAjout extends Component {
 
     confirm = () => {
         DataService.programme.id = this.state.programmes.length + 1
-        console.log(DataService.programme)
 
         ApiService.post('Form', DataService.programme).then(res => {
             this.props.history.push('/')
@@ -75,7 +74,7 @@ class FormAjout extends Component {
             })
         }
         else if (e.target.value == "film") {
-            ligneSerie.push(<div className="row m-2 justify-content-around"><div className="col-10"><br/><div>Durée</div>
+            ligneSerie.push(<div className="row m-2 justify-content-around"><div className="col-10"><br /><div>Durée</div>
                 <input type="number" onChange={this.setData} name="duration" className="col-10 form-control form" /></div></div>)
             DataService.programme.category = "film"
             this.setState({
@@ -101,7 +100,18 @@ class FormAjout extends Component {
     }
 
     setTypeFilm = (e) => {
-        DataService.programme.typeFilm.push(e.target.value)
+        if (e.target.checked == true) {
+            DataService.programme.typeFilm.push(e.target.value)
+        }
+        else {
+            let tmpListTypeFilm = []
+            for (let type of DataService.programme.typeFilm) {
+                if (type != e.target.value) {
+                    tmpListTypeFilm.push(type)
+                }
+            }
+            DataService.programme.typeFilm = tmpListTypeFilm
+        }
     }
 
     render() {
@@ -146,21 +156,21 @@ class FormAjout extends Component {
                         <div className="text-center titleBold">Casting</div>
                         <div className="row m-2 justify-content-center">
                             <div className="col-3">
+                                <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="0" placeholder="Prénom Nom" />
+                                <input type='text' onChange={this.setCastingImage} className="form-control form m-1" name="0" placeholder="URL de l'image" />
+                            </div>
+                            <div className="col-3">
                                 <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="1" placeholder="Prénom Nom" />
                                 <input type='text' onChange={this.setCastingImage} className="form-control form m-1" name="1" placeholder="URL de l'image" />
                             </div>
+
                             <div className="col-3">
                                 <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="2" placeholder="Prénom Nom" />
                                 <input type='text' onChange={this.setCastingImage} className="form-control form m-1" name="2" placeholder="URL de l'image" />
                             </div>
-
                             <div className="col-3">
                                 <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="3" placeholder="Prénom Nom" />
                                 <input type='text' onChange={this.setCastingImage} className="form-control form m-1" name="3" placeholder="URL de l'image" />
-                            </div>
-                            <div className="col-3">
-                                <input type='text' onChange={this.setCastingNom} className="form-control form m-1" name="4" placeholder="Prénom Nom" />
-                                <input type='text' onChange={this.setCastingImage} className="form-control form m-1" name="4" placeholder="URL de l'image" />
                             </div>
                         </div>
                         <div className="row justify-content-center">
@@ -170,7 +180,7 @@ class FormAjout extends Component {
                     <aside className="col-2">
                         <div className="titleBold">Genre</div>
                         {ligne}
-                        <br/>
+                        <br />
                         <div>Grande image
                         <input type='text' onChange={this.setData} className="form-control form" name="imageBig" placeholder="URL de l'image" /></div><br />
                         <div>Image du caroussel

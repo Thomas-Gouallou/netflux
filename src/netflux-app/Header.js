@@ -10,7 +10,7 @@ class Header extends Component {
                 <nav className="navbar navbar-expand-lg  bg-dark text-alert row">
                     
                     <a className="navbar-brand">
-                            <Link to='/' className="nav-link "><img src={Netflux} alt="logo netflux"/></Link>
+                            <Link to='/Acceuil' className="nav-link "><img src={Netflux} alt="logo netflux"/></Link>
                     </a>
                     <ul className="navbar-nav mr-auto col-6">
                         <li className="nav-item">
@@ -34,7 +34,7 @@ class Header extends Component {
                         <Link to= '/Form' className="nav-link text-danger">Ajouter un film/une série</Link>
                     </span>
                     <span className="navbar-text text-danger col">
-                        <Link to= '/Compte' className="nav-link text-danger">Mon Compte</Link>
+                        <Link to= '/' className="nav-link text-danger">Mon Compte</Link>
                     </span>
                 </nav>
             </header>
