@@ -10,13 +10,10 @@ import AcceuilSeries from "./AcceuilSeries.js"
 import AcceuilFilms from "./AcceuilFilms.js"
 import Nouveaute from './Nouveaute'
 import Compte from './Compte'
-<<<<<<< HEAD
 import CreationCompte from "./CreationCompte.js"
 import ConfirmationCreation from "./ConfirmationCreation.js"
 import Perdu from "./Perdu.js"
 import RenvoiMail from "./RenvoiMail.js"
-=======
->>>>>>> 84f660fdb56a131955e4885758f819e893ea1d33
 
  class NetfluxNav extends Component {
 
@@ -43,7 +40,6 @@ import RenvoiMail from "./RenvoiMail.js"
                     <Route path='/Nouveaute' exact>
                         <Nouveaute></Nouveaute>
                     </Route>
-<<<<<<< HEAD
                     <Route path='/' exact>
                         <Compte></Compte>
                     </Route>
@@ -59,11 +55,6 @@ import RenvoiMail from "./RenvoiMail.js"
                     <Route path='/RenvoiMail' exact>
                         <RenvoiMail></RenvoiMail>
                     </Route>    
-=======
-                    <Route path='/Compte' exact>
-                        <Compte></Compte>
-                    </Route>  
->>>>>>> 84f660fdb56a131955e4885758f819e893ea1d33
                 </Switch>
                 <Footer></Footer>
             </BrowserRouter>
